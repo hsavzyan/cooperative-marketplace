@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { UserContext, UserContextType } from "../UserContext"; // Import UserContext from UserContext.tsx
+import { UserContext, UserContextType } from "./UserContext"; // Import UserContext from UserContext.tsx
 
 export const useUser = (): UserContextType => {
   const context = useContext(UserContext);

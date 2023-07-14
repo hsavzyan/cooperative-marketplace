@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useState, ReactNode } from "react";
 import { Product } from "./types";
 
 // Define the type for a cart item
@@ -8,17 +8,19 @@ type CartItem = {
 };
 
 // Define the type for the cart context
-type CartContextType = {
+export type CartContextType = {
   cartItems: CartItem[];
   addToCart: (product: Product) => void;
   removeFromCart: (product: Product) => void;
 };
 
 // Create the cart context with an undefined default value
-const CartContext = createContext<CartContextType | undefined>(undefined);
+export const CartContext = createContext<CartContextType | undefined>(
+  undefined
+);
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 // Define the CartProvider component
@@ -72,13 +74,4 @@ export const CartProvider: React.FC<Props> = ({ children }) => {
       {children}
     </CartContext.Provider>
   );
-};
-
-// Define the useCart hook for accessing the cart context
-export const useCart = (): CartContextType => {
-  const context = useContext(CartContext);
-  if (!context) {
-    throw new Error("useCart must be used within a CartProvider");
-  }
-  return context;
 };

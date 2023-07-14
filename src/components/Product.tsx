@@ -1,4 +1,4 @@
-import { useCart } from "../CartContext";
+import { useCart } from "../useCart";
 import { Product as ProductType } from "../types";
 type Props = {
   product: ProductType;
