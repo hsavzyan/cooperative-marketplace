@@ -1,10 +1,18 @@
 import React, { createContext, useEffect, useState } from "react";
-import { User } from "firebase/auth"; // Removed getAuth
+import {
+  User,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
 import { auth } from "./firebase";
 
 export type UserContextType = {
   user: User | null;
   loading: boolean;
+  signUp: (email: string, password: string) => Promise<User | null>;
+  signIn: (email: string, password: string) => Promise<User | null>;
+  signOut: () => Promise<void>;
 };
 
 export const UserContext = createContext<UserContextType | undefined>(
@@ -28,8 +36,31 @@ export const UserProvider: React.FC<Props> = ({ children }) => {
     return unsubscribe;
   }, []);
 
+  const signUp = async (email: string, password: string) => {
+    const credential = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    setUser(credential.user);
+    return credential.user;
+  };
+
+  const signIn = async (email: string, password: string) => {
+    const credential = await signInWithEmailAndPassword(auth, email, password);
+    setUser(credential.user);
+    return credential.user;
+  };
+
+  const signOutUser = async () => {
+    await signOut(auth);
+    setUser(null);
+  };
+
   return (
-    <UserContext.Provider value={{ user, loading }}>
+    <UserContext.Provider
+      value={{ user, loading, signUp, signIn, signOut: signOutUser }}
+    >
       {children}
     </UserContext.Provider>
   );
