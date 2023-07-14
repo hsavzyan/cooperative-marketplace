@@ -1,6 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
+import { useNavigate } from "react-router-dom";
 
 // Define the SignIn component
 const SignIn = () => {
@@ -8,6 +9,9 @@ const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<Error | null>(null);
+
+  // Get the navigate function from the useNavigate hook
+  const navigate = useNavigate();
 
   // Define the handleSubmit function
   // This function will be called when the user submits the sign in form
@@ -21,6 +25,9 @@ const SignIn = () => {
         // Try to sign in the user with the provided email and password
         // This function will throw an error if the email or password is incorrect
         await signInWithEmailAndPassword(auth, email, password);
+
+        // If the sign in is successful, navigate to the home page
+        navigate("/");
       } catch (error) {
         // If there's an error, catch it and set the error message
         setError(error as Error);
