@@ -1,4 +1,4 @@
-import { useCart } from "../hooks/useCart";
+import { useCart } from "../CartContext";
 
 export const Cart: React.FC = () => {
   // We use our custom hook to get access to the cartItems from our context
