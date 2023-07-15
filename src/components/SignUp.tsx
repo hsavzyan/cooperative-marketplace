@@ -2,57 +2,46 @@ import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 
-// Define the SignUp component
 const SignUp = () => {
-  // Define state variables for the email, password, and error message
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<Error | null>(null);
 
-  // Define the handleSubmit function
-  // This function will be called when the user submits the sign up form
   const handleSubmit = (event: React.FormEvent) => {
-    // Prevent the default form submission behavior
     event.preventDefault();
 
-    // Wrap the await expression with a self-invoking async function
     (async () => {
       try {
-        // Try to create a new user with the provided email and password
-        // This function will throw an error if the email is already in use
         await createUserWithEmailAndPassword(auth, email, password);
       } catch (error) {
-        // If there's an error, catch it and set the error message
         setError(error as Error);
       }
     })().catch((error) => {
-      // Catch any errors that are not caught by the try-catch block
       setError(error as Error);
     });
   };
 
-  // Render the sign up form
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <h1 className="mb-4 text-2xl font-bold text-center">Sign Up</h1>
+    <div className="flex items-center justify-center h-screen m-0 p-0">
+      <h1 className="mb-4 text-3xl font-semibold text-center">Sign Up</h1>
       <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
         <input
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+          className="px-3 py-2 border border-blue-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600"
         />
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+          className="px-3 py-2 border border-blue-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600"
         />
         <button
           type="submit"
-          className="px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
+          className="px-4 py-2 text-white bg-blue-500 rounded-md shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
         >
           Sign Up
         </button>

@@ -1,41 +1,41 @@
 import { useCart } from "../useCart";
+
 export const Cart: React.FC = () => {
-  // We use our custom hook to get access to the cartItems from our context
   const { cartItems, removeFromCart } = useCart();
 
-  // We calculate the total cost of the items in the cart
   const totalCost = cartItems.reduce(
     (total, item) => total + item.product.price * item.quantity,
     0
   );
 
   return (
-    <div className="border p-4 rounded-md">
-      <h2 className="font-bold text-lg mb-2">Shopping Cart</h2>
+    <div className="border border-blue-300 p-4 rounded-md shadow-md">
+      <h2 className="font-semibold text-lg mb-2">Shopping Cart</h2>
 
-      {/* We map over the cartItems to display each one */}
       {cartItems.map((item) => (
-        <div key={item.product.id} className="flex justify-between mb-2">
-          <div>
-            {/* We display the product name and the quantity */}
-            <h3 className="font-bold">{item.product.name}</h3>
+        <div
+          key={item.product.id}
+          className="flex flex-col md:flex-row justify-between items-center border-b border-gray-200 py-2"
+        >
+          <div className="mb-2 md:mb-0">
+            <h3 className="font-semibold">{item.product.name}</h3>
             <p>Quantity: {item.quantity}</p>
           </div>
 
-          {/* We display the total cost for this product (price * quantity) */}
-          <p>${(item.product.price * item.quantity).toFixed(2)}</p>
+          <p className="mb-2 md:mb-0">
+            ${(item.product.price * item.quantity).toFixed(2)}
+          </p>
 
           <button
             onClick={() => removeFromCart(item.product)}
-            className="text-sm text-red-500"
+            className="text-sm text-white bg-red-500 px-2 py-1 rounded-md hover:bg-red-600"
           >
             Remove
           </button>
         </div>
       ))}
 
-      {/* We display the total cost of all items in the cart */}
-      <p className="font-bold text-right">Total: ${totalCost.toFixed(2)}</p>
+      <p className="font-semibold text-right">Total: ${totalCost.toFixed(2)}</p>
     </div>
   );
 };

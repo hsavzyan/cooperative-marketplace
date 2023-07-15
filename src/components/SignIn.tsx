@@ -40,26 +40,26 @@ const SignIn = () => {
 
   // Render the sign in form
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <h1 className="mb-4 text-2xl font-bold text-center">Sign In</h1>
+    <div className="flex flex-col items-center justify-center h-screen w-full">
+      <h1 className="mb-4 text-3xl font-semibold text-center">Sign In</h1>
       <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
         <input
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+          className="px-3 py-2 border border-blue-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600"
         />
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+          className="px-3 py-2 border border-blue-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600"
         />
         <button
           type="submit"
-          className="px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
+          className="px-4 py-2 text-white bg-blue-500 rounded-md shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
         >
           Sign In
         </button>
