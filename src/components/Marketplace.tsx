@@ -8,7 +8,7 @@ type Props = {
 
 export const Marketplace: React.FC<Props> = ({ businesses }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [sortOrder, setSortOrder] = useState("asc");
+  const [sortOrder, setSortOrder] = useState("default");
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
@@ -26,34 +26,37 @@ export const Marketplace: React.FC<Props> = ({ businesses }) => {
       )
   );
 
-  filteredBusinesses = filteredBusinesses.sort((a, b) => {
-    if (sortOrder === "asc") {
-      return a.name.localeCompare(b.name);
-    } else {
-      return b.name.localeCompare(a.name);
-    }
-  });
+  if (sortOrder !== "default") {
+    filteredBusinesses = filteredBusinesses.sort((a, b) => {
+      if (sortOrder === "asc") {
+        return a.name.localeCompare(b.name);
+      } else {
+        return b.name.localeCompare(a.name);
+      }
+    });
+  }
 
   return (
     <div className="p-4">
-      <h1 className="font-semibold text-3xl mb-4">Cooperative Marketplace</h1>
-
       <input
         type="text"
         placeholder="Search businesses and products"
         value={searchTerm}
         onChange={handleSearchChange}
-        className="mb-4 p-2 w-full border border-secondary rounded-md shadow-md"
+        className="mb-4 p-2 w-full border border-secondary rounded-md shadow-md text-light"
       />
 
-      <select
-        value={sortOrder}
-        onChange={handleSortChange}
-        className="mb-4 p-2 w-full border border-secondary rounded-md shadow-md"
-      >
-        <option value="asc">Sort by name (A-Z)</option>
-        <option value="desc">Sort by name (Z-A)</option>
-      </select>
+      <div className="mb-4 p-2 w-full border border-secondary rounded-md shadow-md text-light">
+        <select
+          value={sortOrder}
+          onChange={handleSortChange}
+          className="w-full bg-transparent"
+        >
+          <option value="default">Sort businesses...</option>
+          <option value="asc">Sort by name (A-Z)</option>
+          <option value="desc">Sort by name (Z-A)</option>
+        </select>
+      </div>
 
       {filteredBusinesses.map((business) => (
         <Business key={business.id} business={business} />

@@ -23,7 +23,7 @@ const MainContent: React.FC = () => {
     location.pathname !== "/signup" && location.pathname !== "/signin";
 
   return (
-    <div className="flex flex-col-reverse sm:flex-row bg-primary text-light min-h-screen">
+    <div className="flex flex-col-reverse sm:flex-row bg-primary text-light min-h-screen justify-center">
       <div className="w-full sm:w-2/3 p-4">
         <Routes>
           <Route

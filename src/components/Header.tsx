@@ -9,8 +9,10 @@ const Header = () => {
 
   // Render the header
   return (
-    <header className="flex items-center justify-between p-6 bg-secondary text-light">
-      <h1 className="text-3xl font-semibold">Cooperative Marketplace</h1>
+    <header className="flex flex-col sm:flex-row items-center justify-between p-6 bg-secondary text-light">
+      <h1 className="text-3xl font-semibold mb-4 sm:mb-0">
+        Cooperative Marketplace
+      </h1>
       <nav className="space-x-4">
         {user ? (
           // If the user is signed in, display their email and the sign out button
