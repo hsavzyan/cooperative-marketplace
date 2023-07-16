@@ -43,13 +43,13 @@ export const Marketplace: React.FC<Props> = ({ businesses }) => {
         placeholder="Search businesses and products"
         value={searchTerm}
         onChange={handleSearchChange}
-        className="mb-4 p-2 w-full border border-blue-300 rounded-md shadow-md"
+        className="mb-4 p-2 w-full border border-secondary rounded-md shadow-md"
       />
 
       <select
         value={sortOrder}
         onChange={handleSortChange}
-        className="mb-4 p-2 w-full border border-blue-300 rounded-md shadow-md"
+        className="mb-4 p-2 w-full border border-secondary rounded-md shadow-md"
       >
         <option value="asc">Sort by name (A-Z)</option>
         <option value="desc">Sort by name (Z-A)</option>

@@ -22,7 +22,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen m-0 p-0">
+    <div className="flex flex-col items-center justify-center h-screen w-full">
       <h1 className="mb-4 text-3xl font-semibold text-center">Sign Up</h1>
       <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
         <input
@@ -30,18 +30,18 @@ const SignUp = () => {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="px-3 py-2 border border-blue-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+          className="px-3 py-2 border border-secondary rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-accent"
         />
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="px-3 py-2 border border-blue-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+          className="px-3 py-2 border border-secondary rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-accent"
         />
         <button
           type="submit"
-          className="px-4 py-2 text-white bg-blue-500 rounded-md shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
+          className="px-4 py-2 text-light bg-accent rounded-md shadow-md hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-accent-dark"
         >
           Sign Up
         </button>

@@ -9,7 +9,7 @@ const Header = () => {
 
   // Render the header
   return (
-    <header className="flex items-center justify-between p-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+    <header className="flex items-center justify-between p-6 bg-secondary text-light">
       <h1 className="text-3xl font-semibold">Cooperative Marketplace</h1>
       <nav className="space-x-4">
         {user ? (
@@ -23,13 +23,13 @@ const Header = () => {
           <>
             <Link
               to="/signup"
-              className="text-white hover:bg-blue-500 px-2 py-1 rounded"
+              className="text-light bg-accent hover:bg-accent-dark px-2 py-1 rounded"
             >
               Sign Up
             </Link>
             <Link
               to="/signin"
-              className="text-white hover:bg-blue-500 px-2 py-1 rounded"
+              className="text-light bg-accent hover:bg-accent-dark px-2 py-1 rounded"
             >
               Sign In
             </Link>

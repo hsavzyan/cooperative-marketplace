@@ -23,7 +23,7 @@ const MainContent: React.FC = () => {
     location.pathname !== "/signup" && location.pathname !== "/signin";
 
   return (
-    <div className="flex flex-col-reverse sm:flex-row bg-gray-100 text-gray-800">
+    <div className="flex flex-col-reverse sm:flex-row bg-primary text-light min-h-screen">
       <div className="w-full sm:w-2/3 p-4">
         <Routes>
           <Route
@@ -39,7 +39,7 @@ const MainContent: React.FC = () => {
         </Routes>
       </div>
       {displayCart && (
-        <div className="w-full sm:w-1/3 p-4 border-b sm:border-b-0 sm:border-l">
+        <div className="w-full sm:w-1/3 p-4 border-b sm:border-b-0 sm:border-l border-secondary">
           <Cart />
         </div>
       )}

@@ -13,12 +13,12 @@ export const Product: React.FC<Props> = ({ product }) => {
   };
 
   return (
-    <div className="border border-blue-300 p-4 rounded-md shadow-md">
+    <div className="border border-secondary p-4 rounded-md shadow-md">
       <h2 className="font-semibold text-lg">{product.name}</h2>
       <p>${product.price.toFixed(2)}</p>
       <button
         onClick={handleAddToCartClick}
-        className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+        className="mt-2 bg-accent text-light px-4 py-2 rounded-md hover:bg-accent-dark"
       >
         Add to Cart
       </button>

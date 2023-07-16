@@ -28,7 +28,7 @@ export const Business: React.FC<Props> = ({ business }) => {
   };
 
   return (
-    <div className="border border-blue-300 p-4 rounded-md mb-4 shadow-md">
+    <div className="border border-secondary p-4 rounded-md mb-4 shadow-md">
       <h1 className="font-semibold text-2xl mb-2">{business.name}</h1>
       <p className="mb-4">{business.description}</p>
 
@@ -53,19 +53,19 @@ export const Business: React.FC<Props> = ({ business }) => {
           placeholder="Your name"
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
-          className="w-full p-2 border border-blue-300 rounded-md shadow-md"
+          className="w-full p-2 border border-secondary rounded-md shadow-md"
           required
         />
         <textarea
           placeholder="Your review"
           value={content}
           onChange={(e) => setContent(e.target.value)}
-          className="w-full p-2 border border-blue-300 rounded-md shadow-md"
+          className="w-full p-2 border border-secondary rounded-md shadow-md"
           required
         />
         <button
           type="submit"
-          className="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+          className="w-full py-2 bg-accent text-light rounded-md hover:bg-accent-dark"
         >
           Submit
         </button>

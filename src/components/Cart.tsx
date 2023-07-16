@@ -9,7 +9,7 @@ export const Cart: React.FC = () => {
   );
 
   return (
-    <div className="border border-blue-300 p-4 rounded-md shadow-md">
+    <div className="border border-secondary p-4 rounded-md shadow-md">
       <h2 className="font-semibold text-lg mb-2">Shopping Cart</h2>
 
       {cartItems.map((item) => (
@@ -28,7 +28,7 @@ export const Cart: React.FC = () => {
 
           <button
             onClick={() => removeFromCart(item.product)}
-            className="text-sm text-white bg-red-500 px-2 py-1 rounded-md hover:bg-red-600"
+            className="text-sm text-light bg-accent px-2 py-1 rounded-md hover:bg-accent-dark"
           >
             Remove
           </button>
