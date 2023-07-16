@@ -4,11 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#1A202C",
-        secondary: "#2D3748",
-        accent: "#38B2AC",
-        light: "#F7FAFC",
-        dark: "#171923",
+        primary: "#A1D2CE", // Light Turquoise
+        secondary: "#78CAD2", // Medium Turquoise
+        accent: "#FF6B6B", // Accent Red
+        light: "#333333", // Light Background
+        dark: "#5E6472", // Dark Text
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
@@ -28,9 +28,11 @@ export default {
         },
       }),
       screens: {
-        tablet: "640px",
-        laptop: "1024px",
-        desktop: "1280px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
       },
     },
   },

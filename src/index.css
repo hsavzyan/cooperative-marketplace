@@ -13,3 +13,7 @@ a {
 a:hover {
   @apply underline;
 }
+
+.container {
+  @apply mx-auto max-w-screen-xl;
+}
