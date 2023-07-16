@@ -43,7 +43,7 @@ export const Marketplace: React.FC<Props> = ({ businesses }) => {
         placeholder="Search businesses and products"
         value={searchTerm}
         onChange={handleSearchChange}
-        className="mb-4 p-2 w-full border border-secondary rounded-md shadow-md text-light"
+        className="mb-4 p-2 w-full border border-secondary rounded-md shadow-md text-dark"
       />
 
       <div className="mb-4 p-2 w-full border border-secondary rounded-md shadow-md text-light">

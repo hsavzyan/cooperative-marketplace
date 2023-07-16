@@ -48,14 +48,14 @@ const SignIn = () => {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="px-3 py-2 border border-secondary rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-accent"
+          className="px-3 py-2 border border-secondary rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-accent text-dark"
         />
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="px-3 py-2 border border-secondary rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-accent"
+          className="px-3 py-2 border border-secondary rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-accent text-dark"
         />
         <button
           type="submit"

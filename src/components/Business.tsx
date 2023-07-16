@@ -53,14 +53,14 @@ export const Business: React.FC<Props> = ({ business }) => {
           placeholder="Your name"
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
-          className="w-full p-2 border border-secondary rounded-md shadow-md"
+          className="w-full p-2 border border-secondary rounded-md shadow-md text-dark"
           required
         />
         <textarea
           placeholder="Your review"
           value={content}
           onChange={(e) => setContent(e.target.value)}
-          className="w-full p-2 border border-secondary rounded-md shadow-md"
+          className="w-full p-2 border border-secondary rounded-md shadow-md text-dark"
           required
         />
         <button
@@ -73,3 +73,5 @@ export const Business: React.FC<Props> = ({ business }) => {
     </div>
   );
 };
+
+export default Business;
